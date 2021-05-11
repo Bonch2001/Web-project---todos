@@ -1,0 +1,75 @@
+html{
+    background-color: #E7E7E7;
+}
+
+h1{
+    color: #e0c0c0;
+    font-size: 10vh;
+    text-align-last: center;
+}
+
+.head{
+    position: relative;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid grey;
+}
+
+.header{
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid grey;
+}
+
+.text{
+    flex-grow: 20;
+}
+
+.check{
+    align-self: center;
+    justify-self: flex-start;
+}
+
+.check3{
+    align-self: center;
+}
+
+.container{
+    width: 30vw;
+    position: relative;
+    margin: auto;
+    background-color: #FFFFFF;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.item{
+    flex-grow: 50;
+    justify-self: flex-end;
+    padding: 1vh;
+    height: 3vh;
+}
+
+.bottom{
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid grey;
+
+}
+
+.spa{
+    margin: 3px;   
+}
+
+.number{
+    align-self: center;
+}
+
+.lista{
+    padding: 0;
+    margin: 0;
+}
