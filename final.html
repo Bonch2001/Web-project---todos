@@ -7,30 +7,19 @@
 </head>
 
 <body>
-  <h1>
-    todos
-  </h1>
+  <h1>todos</h1>
   <div class="container">
     <div class="head">
-      <img src="out.png" class="check3">
-      <input type="text" size="20" title="What needs to be done?" id="text"></input>
+      <img src="out.png" class="checkk" id="arrow">
+      <input type="text" id="myInput" placeholder="What needs to be done?" size="20"></input>
     </div>
-    <ul class="lista">
-      <li class="header">
-        <input type="checkbox" class="check">
-        <div class="item">1</div>
-        <img src="close.png" class="check3">
-      </li>
-      <li class="header">
-        <input type="checkbox" class="check">
-        <div class="item">2</div>
-        <img src="close.png" class="check3">
-      </li>
-      <li class="header">
-        <input type="checkbox" class="check">
-        <div class="item">3</div>
-        <img src="close.png" class="check3">
-      </li>
+    <ul id="myUL" class="list">
+      <li id="item"><img src="unchecked.png" class="uncheck">Hit the gym<img src="close.png" class="close"></li>
+      <li class="checked" id="item"><img src="checked.png" class="check">Pay bills<img src="close.png" class="close"></li>
+      <li id="item"><img src="unchecked.png" class="uncheck">Meet George<img src="close.png" class="close"></li>
+      <li id="item"><img src="unchecked.png" class="uncheck">Buy eggs<img src="close.png" class="close"></li>
+      <li id="item"><img src="unchecked.png" class="uncheck">Read a book<img src="close.png" class="close"></li>
+      <li id="item"><img src="unchecked.png" class="uncheck">Organize office<img src="close.png" class="close"></li>
     </ul>
     <div class="bottom">
       <div id="number">0 items left</div>
