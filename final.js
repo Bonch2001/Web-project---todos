@@ -1,50 +1,65 @@
-let mylist = [
-    {
-        id: 1,
-        todo: "a",
-        check: false,
-    },
-    {
-        id: 2,
-        todo: "b",
-        check: false,
-    },
-    {
-        id: 3,
-        todo: "c",
-        check: false,
+var myNodelist = document.getElementsByTagName("LI");
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+    close[i].onclick = function () {
+        var div = this.parentElement;
+        div.style.display = "none";
     }
-]
+}
 
-let top = document.getElementById('text')
-let lista = document.querySelector('lista')
+var check = document.getElementsByClassName("uncheck");
+var i;
+for (i = 0; i < close.length; i++) {
+    close[i].onclick = function () {
+        var div = this.parentElement;
+    }
+}
 
-top.addEventListener('keyup', function (e) {
-    if (e.key === 13) {
-        {
-            let varr = document.createElement("li")
-            varr.className = 'header'
+var input = document.getElementById("myInput");
+document.body.input.onkeyup = function (e) {
+    if (e.key === "Enter") {
+        newElement()
+    }
+}
 
-            let input = document.createElement('input')
-            input.type = "checkbox"
-            input.className = 'check'
-            varr.appendChild(input)
+var unchecked = document.querySelector('uncheck');
+unchecked.addEventListener('click', function (ev) {
+    if (ev.target.className === 'uncheck') {
+        ev.target.classList.toggle('check');
+    }
+}, false);
 
-            let div = document.createElement('div')
-            div.className = 'item'
-            div.textContent = top.textContent
-            top.textContent = ''
-            varr.appendChild(div)
+var checked = document.querySelector('check');
+checked.addEventListener('click', function (ev) {
+    if (ev.target.className === 'check') {
+        ev.target.classList.toggle('uncheck');
+    }
+}, false);
 
-            let imag = document.createElement("img")
-            imag.src = "close.png"
-            imag.className = 'check3'
-            varr.appendChild(imag)
-
-            list.appendChild(varr)
+function newElement() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInput").value;
+    var t = document.createTextNode(inputValue);
+    var k = document.querySelector('uncheck')
+    li.appendChild(k)
+    li.appendChild(t);
+    var j = document.querySelector('close')
+    li.appendChild(j)
+    if (inputValue === '') {
+        alert("You must write something!");
+    } else {
+        document.getElementById("myUL").appendChild(li);
+    }
+    document.getElementById("myInput").value = "";
+/*     for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+          var div = this.parentElement;
+          div.style.display = "none";
         }
-    }
-})
+    } */
+}
 
-
-
+//    var arrow = document.getElementById("arrow");
