@@ -1,17 +1,5 @@
 let myNodelist = document.getElementsByTagName("LI");
 
-// Click on a close button to hide the current list item
-setInterval(function () {
-    let close = document.getElementsByClassName("close");
-    let i;
-    for (i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
-            let div = this.parentElement;
-            div.remove('li')
-        }
-    }
-}, 100);
-
 /* let check = document.getElementsByClassName("check");
 for (i = 0; i < check.length; i++) {
     check[i].onclick = function () {
@@ -25,6 +13,7 @@ for (i = 0; i < check.length; i++) {
     }
 }
  */
+
 let input = document.getElementById("myInput");
 input.addEventListener("keyup", function (e) {
     if (e.code === "Enter" || e.code === "NumpadEnter") {
@@ -54,9 +43,8 @@ function newElement() {
     li.id = "item"
     let inputValue = document.getElementById("myInput").value;
     let t = document.createTextNode(inputValue);
-    let k = document.createElement('img')
-    let j = document.createElement('img')
 
+    let k = document.createElement('img')
     k.src = "unchecked.png"
     k.className = 'uncheck'
     let kk = document.createElement('img')
@@ -68,14 +56,14 @@ function newElement() {
         div.classList.add("checked");
         div.appendChild(kk)
     });
-
     kk.addEventListener('click', function () {
         let div = this.parentElement;
         div.classList.remove("checked");
         div.removeChild(kk)
         div.appendChild(k)
     });
-
+    
+    let j = document.createElement('img')
     j.src = "close.png"
     j.className = 'close'
 
@@ -89,10 +77,18 @@ function newElement() {
     }
     document.getElementById("myInput").value = "";
     itemsleft.textContent = myNodelist.length + " items left"
+
+    let close = document.getElementsByClassName("close");
+    let i;
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+            let div = this.parentElement;
+            div.remove('li')
+        }
+    }
 }
 
 let arrow = document.getElementById("arrow");
-
 arrow.addEventListener('click', function () {
     let myNodelist = document.getElementsByTagName("LI");
     let kk = document.createElement('img')
@@ -132,7 +128,7 @@ all.addEventListener('click', function () {
         myNodelist[i].style.display = "block";
     }
     itemsleft.textContent = myNodelist.length + " items left"
-}, false);
+});
 
 let active = document.getElementById('active');
 active.addEventListener('click', function () {
@@ -148,7 +144,6 @@ active.addEventListener('click', function () {
             itemsleft.textContent = c + " items left"
         }
     }
-
 });
 
 let completed = document.getElementById('completed');
@@ -165,4 +160,4 @@ completed.addEventListener('click', function () {
             itemsleft.textContent = c + " items left"
         }
     }
-}, false);
+});
