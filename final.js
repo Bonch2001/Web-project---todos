@@ -62,7 +62,7 @@ function newElement() {
         div.removeChild(kk)
         div.appendChild(k)
     });
-    
+
     let j = document.createElement('img')
     j.src = "close.png"
     j.className = 'close'
@@ -98,9 +98,9 @@ arrow.addEventListener('click', function () {
     k.src = "unchecked.png"
     k.className = 'uncheck'
     let v = 0
-    for (i = 0; i < myNodelist.length; i++)
-        console.log(myNodelist[i])
-        /* if (myNodelist[i].classList.contains("checked")) { v = v + 1 }
+    for (i = 0; i < myNodelist.length; i++) {
+        console.log(myNodelist[i].classList)
+        if (myNodelist[i].classList.contains("checked")) { v = v + 1 }
         if (v === i) {
 
             myNodelist[i].classList.remove("checked");
@@ -111,14 +111,8 @@ arrow.addEventListener('click', function () {
             myNodelist[i].classList.add("checked");
             myNodelist[i].removeChild(k);
             myNodelist[i].appendChild(kk);
-        } */
-        if (myNodelist[i].classList.contains("checked"))
-        {}
-        else{
-            myNodelist[i].classList.add("checked");
-            myNodelist[i].removeChild(k);
-            myNodelist[i].appendChild(kk);
         }
+    }
 });
 
 
@@ -140,7 +134,7 @@ active.addEventListener('click', function () {
     for (i = 0; i < myNodelist.length; i++) {
         if (myNodelist[i].classList.contains("checked")) {
             myNodelist[i].style.display = "none";
-            c = c-1
+            c = c - 1
             itemsleft.textContent = c + " items left"
         }
     }
@@ -156,7 +150,7 @@ completed.addEventListener('click', function () {
     for (i = 0; i < myNodelist.length; i++) {
         if (!myNodelist[i].classList.contains("checked")) {
             myNodelist[i].style.display = "none";
-            c = c-1
+            c = c - 1
             itemsleft.textContent = c + " items left"
         }
     }
