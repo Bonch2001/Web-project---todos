@@ -98,19 +98,28 @@ arrow.addEventListener('click', function () {
     k.src = "unchecked.png"
     k.className = 'uncheck'
     let v = 0
-    for (i = 0; i < myNodelist.length; i++) {
-        console.log(myNodelist[i].classList)
-        if (myNodelist[i].classList.contains("checked")) { v = v + 1 }
-        if (v === i) {
 
+    for (i = 0; i < myNodelist.length; i++) {
+        if (myNodelist[i].classList.contains("checked")) { v = v + 1 }
+    }
+
+    if (v === myNodelist.length) {
+        for (i = 0; i < myNodelist.length; i++) {
             myNodelist[i].classList.remove("checked");
-            myNodelist[i].removeChild(kk);
+            let children = myNodelist[i].childNodes;
+            console.log(children[0])
+            myNodelist[i].removeChild(children[0]);
             myNodelist[i].appendChild(k);
         }
-        else {
+    }
+    else {
+        for (i = 0; i < myNodelist.length; i++) {
             myNodelist[i].classList.add("checked");
-            myNodelist[i].removeChild(k);
+            let children = myNodelist[i].childNodes;
+            myNodelist[i].removeChild(children[0]);
+            console.log(myNodelist[i])
             myNodelist[i].appendChild(kk);
+            console.log(myNodelist[i])
         }
     }
 });
