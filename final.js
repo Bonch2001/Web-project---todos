@@ -44,6 +44,8 @@ function newElement() {
     let inputValue = document.getElementById("myInput").value;
     let t = document.createTextNode(inputValue);
 
+    li. id ="0";
+
     let k = document.createElement('img')
     k.src = "unchecked.png"
     k.className = 'uncheck'
@@ -88,15 +90,39 @@ function newElement() {
     }
 }
 
+let k = document.createElement('img')
+k.src = "unchecked.png"
+k.className = 'uncheck'
+
+let kk = document.createElement('img')
+kk.src = "checked.png"
+kk.className = 'check'
+
+k.addEventListener('click', function () {
+    let div = this.parentElement;
+    div.classList.add("checked");
+    cln = kk.cloneNode(true);
+    div.appendChild(cln)
+    div.removeChild(this)
+});
+kk.addEventListener('click', function () {
+    let div = this.parentElement;
+    div.classList.remove("checked");
+    cln = k.cloneNode(true);
+    div.removeChild(this);
+    cln = k.cloneNode(true);
+    div.appendChild(cln);
+});
+
+/* function pressed() {
+
+}
+ */
 let arrow = document.getElementById("arrow");
 arrow.addEventListener('click', function () {
     let myNodelist = document.getElementsByTagName("LI");
-    let kk = document.createElement('img')
-    kk.src = "checked.png"
-    kk.className = 'check'
-    let k = document.createElement('img')
-    k.src = "unchecked.png"
-    k.className = 'uncheck'
+
+
     let v = 0
 
     // let array = Array.from(myNodelist)
@@ -107,20 +133,23 @@ arrow.addEventListener('click', function () {
 
     if (v === myNodelist.length) {
         for (i = 0; i < myNodelist.length; i++) {
+            cln = k.cloneNode(true);
             myNodelist[i].classList.remove("checked");
-            myNodelist[i].appendChild(k);
+            let child = myNodelist[i].getElementsByClassName("check").item(0);
+            myNodelist[i].removeChild(child)
+            myNodelist[i].appendChild(cln);
         }
     }
     else {
         for (i = 0; i < myNodelist.length; i++) {
+            cln = kk.cloneNode(true);
             myNodelist[i].classList.add("checked");
             // let children = myNodelist[i].childNodes;
-            /* console.log(kk);
-            myNodelist[i].removeChild(children[0]);
-            console.log(myNodelist[i]);
-            myNodelist[i].appendChild(kk); */
+            //myNodelist[i].removeChild(children[0]);
            // myNodelist[i].replaceChild(kk, children[0]);
-           myNodelist[i].appendChild(kk);
+           let child = myNodelist[i].getElementsByClassName("uncheck").item(0);
+           myNodelist[i].removeChild(child)
+           myNodelist[i].appendChild(cln);
         }
     }
 });
