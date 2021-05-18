@@ -99,6 +99,8 @@ arrow.addEventListener('click', function () {
     k.className = 'uncheck'
     let v = 0
 
+    // let array = Array.from(myNodelist)
+
     for (i = 0; i < myNodelist.length; i++) {
         if (myNodelist[i].classList.contains("checked")) { v = v + 1 }
     }
@@ -106,20 +108,19 @@ arrow.addEventListener('click', function () {
     if (v === myNodelist.length) {
         for (i = 0; i < myNodelist.length; i++) {
             myNodelist[i].classList.remove("checked");
-            let children = myNodelist[i].childNodes;
-            console.log(children[0])
-            myNodelist[i].removeChild(children[0]);
             myNodelist[i].appendChild(k);
         }
     }
     else {
         for (i = 0; i < myNodelist.length; i++) {
             myNodelist[i].classList.add("checked");
-            let children = myNodelist[i].childNodes;
+            // let children = myNodelist[i].childNodes;
+            /* console.log(kk);
             myNodelist[i].removeChild(children[0]);
-            console.log(myNodelist[i])
-            myNodelist[i].appendChild(kk);
-            console.log(myNodelist[i])
+            console.log(myNodelist[i]);
+            myNodelist[i].appendChild(kk); */
+           // myNodelist[i].replaceChild(kk, children[0]);
+           myNodelist[i].appendChild(kk);
         }
     }
 });
